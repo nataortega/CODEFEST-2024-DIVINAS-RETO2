@@ -206,10 +206,16 @@ menor_frec_sat2 = min([menor_marker_4, menor_marker_5, menor_marker_6])
 
 ancho_banda_sat2 = mayor_frec_sat2 - menor_frec_sat2
 ancho_banda_sat1 = mayor_frec_sat1 - menor_frec_sat1
+
+amplitud_sat1 = (mayor_sat1 - menor_sat1)/50
+amplitud_sat2 = (mayor_sat2 - menor_sat2)/50
+
+
 # Dato que quieres exportar
 datos = {
     "Frecuencia Central Satelite": [max_value1, max_value2],
-    "Ancho de Banda" : [ancho_banda_sat1, ancho_banda_sat2]
+    "Ancho de Banda" : [ancho_banda_sat1, ancho_banda_sat2],
+    "Amplitud/Potencia" : [amplitud_sat1, amplitud_sat2]
 }
 
 # Guardar el dato en un archivo .json
