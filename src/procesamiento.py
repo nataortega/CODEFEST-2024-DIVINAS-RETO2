@@ -1,4 +1,5 @@
 import csv
+import json
 import pandas as pd
 import numpy as np
 import re
@@ -125,6 +126,18 @@ mayor_marker_6 = marker6_filtro['Timestamp (Relative)'].max()
 mayor_sat1 = max([mayor_marker_1, mayor_marker_2])
 
 mayor_sat2 = max([mayor_marker_4, mayor_marker_5, mayor_marker_6])
+
+# Dato que quieres exportar
+datos = {
+    "Frecuencia Central Satelite": [mayor_sat1, mayor_sat2],
+}
+
+# Guardar el dato en un archivo .json
+with open("datos.json", "w") as archivo_json:
+    json.dump(datos, archivo_json, indent=4) 
+
+
+
 print("Maximo Satelite 1:" + str(mayor_sat1))
 print("Maximo Satelite 2:" + str(mayor_sat2))
 
