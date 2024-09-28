@@ -176,11 +176,36 @@ menor_sat1 = min([min_value1, min_value2])
 
 menor_sat2 = max([min_value4, min_value5, min_value6])
 
-ancho_banda_sat2 = mayor_sat2 - menor_sat2
-ancho_banda_sat1 = mayor_sat1 - menor_sat1
 
 
 
+mayor_marker_1 = marker1_filtro['Timestamp (Relative)'].max()
+mayor_marker_2 = marker2_filtro['Timestamp (Relative)'].max()
+
+
+mayor_marker_4 = marker4_filtro['Timestamp (Relative)'].max()
+mayor_marker_5 = marker5_filtro['Timestamp (Relative)'].max()
+mayor_marker_6 = marker6_filtro['Timestamp (Relative)'].max()
+
+mayor_frec_sat1 = max([mayor_marker_1, mayor_marker_2])
+
+mayor_frec_sat2 = max([mayor_marker_4, mayor_marker_5, mayor_marker_6])
+
+
+menor_marker_1 = marker1_filtro['Timestamp (Relative)'].max()
+menor_marker_2 = marker2_filtro['Timestamp (Relative)'].max()
+
+
+menor_marker_4 = marker4_filtro['Timestamp (Relative)'].max()
+menor_marker_5 = marker5_filtro['Timestamp (Relative)'].max()
+menor_marker_6 = marker6_filtro['Timestamp (Relative)'].max()
+
+menor_frec_sat1 = min([menor_marker_1, menor_marker_2])
+menor_frec_sat2 = min([menor_marker_4, menor_marker_5, menor_marker_6])
+
+
+ancho_banda_sat2 = mayor_frec_sat2 - menor_frec_sat2
+ancho_banda_sat1 = mayor_frec_sat1 - menor_frec_sat1
 # Dato que quieres exportar
 datos = {
     "Frecuencia Central Satelite": [max_value1, max_value2],
