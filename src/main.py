@@ -1,4 +1,4 @@
-from gui import iniciar_gui
+import procesamiento 
 
 if __name__ == "__main__":
-    iniciar_gui()
+    procesamiento()
