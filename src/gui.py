@@ -8,7 +8,7 @@ def iniciar_gui():
     root.title("Analizador de Señales RF")
 
     def cargar_archivo():
-        file_path = filedialog.askopenfilename(filetypes=[("CSV Files", "*.xslx")])
+        file_path = filedialog.askopenfilename(filetypes=[("CSV Files", "*.csv")])
         if file_path:
             datos = cargar_datos(file_path)
             procesar_datos(datos)
